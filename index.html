@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<!-- THIS EMAIL WAS BUILT AND TESTED WITH LITMUS http://litmus.com -->
+<!-- IT WAS RELEASED UNDER THE MIT LICENSE https://opensource.org/licenses/MIT -->
+<!-- QUESTIONS? TWEET US @LITMUSAPP -->
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+      input[type="checkbox"]:checked{display:inline-block !important}
+      input[type="checkbox"]:checked ~ input[type="radio"]{display:inline-block !important}
+      #one:checked ~* .slide1{display:block !important}
+      #two:checked ~* .slide2{display:block !important}
+      #three:checked ~* .slide3{display:block !important}
+      #between1:checked ~* .connect1{display:block !important}
+      #between2:checked ~* .connect2{display:block !important}
+      #between3:checked ~* .connect3{display:block !important}
+      #between4:checked ~* .connect4{display:block !important}
+      #wrong:checked ~ .error{display:inline-block !important;opacity:1;color:#f1736a;font-size:12px;line-height:24px;border-radius:3px;padding:0 15px;margin-top:15px}
+      #wrong:checked ~ .check{display:inline-block !important;background:#68c587;border-radius:3px;font-size:18px;padding:12px 15px;color:#ffffff;font-weight:bold;float:right;margin-top:10px}
+      #wrong:checked + div > div{border-color:#f1736a;color:#f1736a}
+      #wrongcheck:checked ~ .error{display:inline-block !important;opacity:1;color:#f1736a;font-size:12px;line-height:24px;border-radius:3px;padding:0 15px;margin-top:15px}
+      #correct:checked ~ .success{display:inline-block !important;color:#68c587;padding:15px;font-size:12px;line-height:24px}
+      #correct:checked ~ .next{display:inline-block !important;background:#68c587;border-radius:3px;font-size:18px;padding:12px 15px;color:#ffffff;font-weight:bold;float:right;margin-top:10px}
+      #correct:checked + div > div{border-color:#68c587;color:#68c587}
+      input[name="quiz"] + div:hover{opacity:1 !important;transition:.5s;cursor:pointer;background:#f6f6f6;border-radius:3px}
+    </style>
+    <style type="text/css">
+      /* FONTS */
+          @media screen {
+              @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+              }
+              @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+              }
+              @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+              }
+              @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+              }
+          }
+          /* CLIENT-SPECIFIC STYLES */
+          /* RESET STYLES */
+          /* iOS BLUE LINKS */
+          a[x-apple-data-detectors] {
+              color: inherit !important;
+              text-decoration: none !important;
+              font-size: inherit !important;
+              font-family: inherit !important;
+              font-weight: inherit !important;
+              line-height: inherit !important;
+          }
+          /* MOBILE STYLES */
+          /*@media screen and (max-width:600px){
+              h1 {
+                  font-size: 32px !important;
+                  line-height: 32px !important;
+              }
+          }*/
+          /* ANDROID CENTER FIX */
+      	/* !! QUIZ STYLING !! */
+      /* FALLBACK STYLING */
+      	@media screen and (-webkit-min-device-pixel-ratio: 0) {
+              .fallback {
+                  display:none;
+                  display:none!important;
+                  max-height:0;
+                  overflow:hidden;
+              }
+              .interactive{
+                  display:block!important;
+                  max-height:none!important;
+              }
+      }
+      /* HIDE INPUTS BY DEFAULT */
+      /* DISPLAY RADIO BUTTONS WHEN CHECKBOX IS CHECKED*/
+      /* HIDE SLIDES BY DEFAULT, DISPLAY WHEN RADIO BUTTON IS CHECKED */
+      /* HIDE QUIZ STATES */
+      /* OPTION STYLING */
+      /* ERROR MESSAGE STYLING */
+      /* SUCCESS MESSAGE STYLING */
+      /* OPTION HOVER EFFECTS */
+    </style>
+  </head>
+  <body style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;height:100% !important;margin:0 !important;padding:0 !important;width:100% !important;background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+    <!-- HIDDEN PREHEADER TEXT -->
+    <div style="display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: 'Lato', Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+      A new progress report design!
+    </div>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+      <!-- INTRO -->
+      <tr>
+        <td bgcolor="#183F63" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <tr>
+              <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 40px 0;">
+                <table align="center" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                  <tr>
+                    <td align="left" valign="bottom" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 56px 50px 0 50px;">
+                      <p style="font-family: Proxima Nova, sans-serif; font-size: 15px; line-height:24px; color: #ffffff; letter-spacing: .5px;"> <span style="font-size: 40px; font-weight: 600; color: #AFFFCC;"> Dear May-Li Khoe,</span> <br>
+                        <br>
+                        I hope this finds you well! As a designer interested in working at the intersection of interaction design and education, I was excited to see the opening for an <span style="font-weight: 600; color: #AFFFCC;">Interaction Designer</span> on your team while visiting the Khan Academy site last month. <br>
+                         <br>
+                        Seeing that this role was responsible for interactive marketing campaigns across email, I set out to redesign Khan Academy's <span style="font-weight: 600; color: #AFFFCC;"> weekly progress summary emails </span> -- a regularly accessed touchpoint for users -- to further engage learners and promote learning. <br>
+                         <br>
+                        Though this position is no longer listed on your site, I wanted to send over this proposed redesign and inquire on any other possible openings with your team, as I would love to contribute my design skills to the important work your team is doing within the education space at Khan Academy.
+                        <br>
+                        <br>
+                        A little about myself:<br>
+                        <br>
+                        My passion for education stems from my studies in Cognitive Science at the University of Southern California, where my coursework ranged from computer science to the science of learning and memory. During this time, I also became excited about interaction design while exploring the possibilities of emerging technology with visiting artists and scholars in USC's Media Arts & Practice Department. <br>
+                        <br>
+                        I've applied these learnings to design playful interactions for kid users as a UX Design Associate at Nickelodeon Digital, teach math at Columbia Community Impact, prep students for the SAT at CollegeSpring, and teach college-level science content to elementary school students with USC's Joint Educational Program.<br>
+                        <br>
+                        I would love to contribute to the diversity of your team through my deep understanding of cognitive science and background in community organizing. In understanding the underlying mechanisms of how we learn and process information through my background in Cognitive Science, I am able to apply these principles in my approach to design. Additionally, while having worked in community organizing efforts both on and off campus during my undergraduate career, I also bring a strong desire to identify underlying needs of people and a systems thinking mindset to all the work I do. <br>
+                        <br>
+                        It'd be great to talk with you further about my interests and qualifications! I can be reached at lornasxu@gmail.com or (650) 867-6017. I hope you enjoy the redesign and have a great start to your week!
+									</p>
+                      <table width="100%" table-layout="fixed" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                        <tr>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            resume
+									</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            cover letter
+									</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            portfolio
+									</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- REDESIGN INTRO -->
+      <tr>
+        <td bgcolor="#FEE1DB" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <tr>
+              <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 40px 0;">
+                <table align="center" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                  <tr>
+                    <td align="left" valign="bottom" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 56px 50px 0 50px;">
+                      <p style="font-family: Proxima Nova, sans-serif; font-size: 15px; line-height:24px; color: #775555; letter-spacing: .5px;"> <span style="font-size: 40px; font-weight: 600; color: #F58580;"> Intro to Redesign </span> <br>
+                        <br>
+                        For this redesign I aimed to leverage this weekly point of engagement with users to provide further value to their learning process, motivate continued progress and bring them back to the Khan Academy site. Keep scrolling past the end of the redesign for provide further detail  my design process and reasoning! <br>
+                         <br>
+                        Though I tested this design on multiple email clients throughout my process, I'm including links to the live email pages, in case you run into any rendering issues I wasn't able to catch. <br>
+                        <br>
+                      </p>
+                      <table width="100%" table-layout="fixed" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                        <tr align="center">
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            Full Interactive Email
+									</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            Fallback Email
+									</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            Fallback to the Fallback Email
+									</td>
+                        </tr>
+                        <tr colspan="3">
+                          <td colspan="3" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <br>
+                            <p style="font-family: Proxima Nova, sans-serif; font-size: 15px; line-height:24px; color: #775555; letter-spacing: .5px;"> <span style="font-size: 30px; font-weight: 600; text-align: center; color: #F58580;"> Hope you enjoy! </span>
+                            </p>
+                            <p>
+                              \/
+								</p>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- REDESIGNED KA WEEKLY PROGRESS REPORTS -->
+      <tr>
+        <td bgcolor="FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <tr>
+              <td align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 40px 0;">
+                <table align="center" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                  <tr>
+                    <td align="left" valign="bottom" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0 0 0 10px; ;">
+                      <img src="https://imgur.com/Ks99hOK.jpg" width="130px" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+                   </td>
+                    <td align="right" valign="middle" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0 10px 0 0;">
+                      <p style="color: #f6f6f6; font-family: Proxima Nova, sans-serif; font-size: 12px; line-height: 12px; margin: 0; font-weight: 600;">
+                        APRIL 4 - APRIL 11, 2018 </p>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- HERO -->
+      <tr>
+        <td bgcolor="#FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0px 10px 0px 10px;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <tr>
+              <td bgcolor="#ffffff" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 20px 50px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: Proxima Nova, sans-serif; font-size: 48px; font-weight: 400;  line-height: 36px;">
+                <p style="font-size: 30px; line-height: 40px; font-weight: 300;">
+                  "When you have to think harder, it makes you smarter!"
+					   </p>
+                <p style=" font-size: 12px; font-weight: 600; line-height: 12px; letter-spacing: .5px;">
+                  CHECK OUT THE PROGRESS YOU'VE MADE THIS WEEK:
+					   </p>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- COPY BLOCK -->
+      <tr>
+        <td bgcolor="#FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0px 10px 0px 10px;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <!-- COPY -->
+            <tr>
+              <td bgcolor="#ffffff" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 15px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+              </td>
+            </tr>
+            <!-- BULLETPROOF BUTTON -->
+            <tr>
+              <td bgcolor="#ffffff" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                  <tr>
+                    <td align="center" valign="top" width="100%" background="https://imgur.com/IArNLE6.png" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background-image: url('https://imgur.com/IArNLE6.png'), linear-gradient(#00203B, black); background-repeat: repeat; background-attachment: fixed; padding: 72px 0 30px 0;" class="mobile-padding">
+                      <table style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                        <tr>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-bottom: 40px;">
+                            <p style=" font-family: Proxima Nova, sans-serif; color: white; margin: 0; font-size: 14px; font-weight: 600; text-align:center;">
+                              This week you earned:</p>
+                          </td>
+                        </tr>
+                      </table>
+                      <table width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                        <tr>
+                          <td colspan="4" align="center" valign="center" background="https://i.imgur.com/C453fUd.png" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background: url('https://i.imgur.com/C453fUd.png'); background-repeat: no-repeat; background-size: fixed; background-position: center; padding: 0 20px 40px 20px;" class="mobile-padding">
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width:600px;">
+                              <tr style="padding: 0 0 50px 0;">
+                                <td align="center" valign="bottom" width="150" min-width="100" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px 0 40px 0;">
+                                  <p style=" font-family: Proxima Nova, sans-serif; color: #6B7B88; margin: 0; font-size: 36px; line-height: 42px; font-weight: 600; text-align:center;"> 200  </p>
+                                  <p style=" font-family: Proxima Nova, sans-serif; color: #6B7B88; margin: 0; font-size: 13px; font-weight: 600; text-align:center;"> ENERGY POINTS <br>
+                                     earned last week
+								  </p>
+                                </td>
+                                <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <img src="https://i.imgur.com/De1qbXO.png" height="234" width="233" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+							  </td>
+                                <td align="right" width="145" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <div>
+                                    <!--[if mso]>
+                                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://khanacademy.org/" style="height:57px;v-text-anchor:middle;width:145px;" arcsize="15%" strokecolor="#ffffff">
+                                        <w:anchorlock/>
+                                          <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Earn More!</center>
+                                        </v:roundrect>
+                                    <![endif]-->
+                                    <a href="http://khanacademy.org/" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold; letter-spacing: .5px;line-height:57px;text-align:center;text-decoration:none;width:145px;-webkit-text-size-adjust:none;mso-hide:all;">Earn More!</a>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 60px 0 60px 0;">
+                            <table align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                              <tr style="color: #f6f6f6; margin: 0; font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:600;">
+                                <td width="42" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                </td>
+                                <td width="90" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 0 10px 0;">
+                                  This Week:
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; color:#6B7B88; padding: 0 0 10px 0;" width="120" align="center">
+                                  Previous Week
+				   </td>
+                              </tr>
+                              <tr style="color: #f6f6f6; margin: 0; font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight:600;">
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 10px 30px;">
+                                  <img src="https://i.imgur.com/aUcNB9y.png" height="41" width="41" align="center" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 10px; font-weight: 300;">
+                                  Badges Earned
+				   </td>
+                                <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size:36px;">
+                                  5
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#6B7B88; font-family: Proxima Nova, sans-serif; font-size:36px;" align="center">
+                                  2
+				   </td>
+                              </tr>
+                              <tr style="color: #f6f6f6; margin: 0; font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight:600; border-top: 2px solid #6B7B88; border-bottom: 2px solid #6B7B88;">
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 10px 30px;">
+                                  <img src="https://i.imgur.com/heqs0kc.png" height="39" width="42" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 10px; font-family: Proxima Nova, sans-serif; font-weight: 300;">
+                                  Skills Mastered
+				   </td>
+                                <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-size:36px;">
+                                  3
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#6B7B88; font-family: Proxima Nova, sans-serif; font-size:36px;" align="center">
+                                  6
+				   </td>
+                              </tr>
+                              <tr style="color: #f6f6f6; margin: 0; font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight:600;">
+                                <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 10px 30px;">
+                                  <img src="https://i.imgur.com/PKN1P29.png" height="38" width="35" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 10px; font-family: Proxima Nova, sans-serif; font-weight: 300;">
+                                  Videos Watched
+				   </td>
+                                <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-size:36px;">
+                                  10
+				   </td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;color:#6B7B88; font-family: Proxima Nova, sans-serif; font-size:36px;" align="center">
+                                  -
+				   </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr align="center">
+                          <td colspan="2" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0 0 50px 0;">
+                            <div>
+                              <!--[if mso]>
+                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://khanacademy.org/" style="height:57px;v-text-anchor:middle;width:180px;" arcsize="15%" strokecolor="#ffffff">
+                                  <w:anchorlock/>
+                                    <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Keep Going!</center>
+                                  </v:roundrect>
+                              <![endif]-->
+                              <a href="http://khanacademy.org/" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold; letter-spacing: .5px;line-height:57px;text-align:center;text-decoration:none;width:180px;-webkit-text-size-adjust:none;mso-hide:all;">Keep Going!</a>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- COPY CALLOUT -->
+      <tr>
+        <td bgcolor="#FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 0px 10px 0px 10px;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <!-- HEADLINE -->
+            <tr>
+              <td bgcolor="#FFFFFF" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px;  font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                <p style="font-size: 30px; font-weight: 300; line-height: 20px;">
+                  <img src="https://i.imgur.com/AhkBV7G.png" width="50" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						  <span style="font-size: 64px; line-height:50px; padding-left: 10px;"> 5 </span> BADGES EARNED
+					   </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 50px;" bgcolor="#ffffff">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width:600px; table-layout: fixed;">
+                  <tr>
+                    <td colspan="5" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <table width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;padding: 20px; table-layout:fixed;">
+                        <tr align="center" valign="top" style="font-family: Proxima Nova, sans-serif; font-size: 15px; font-weight:600; line-height: 26px; color:#545454;">
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img src="https://i.imgur.com/KcLcQ1v.png" width="80" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+									<br>
+                            Just Getting Started
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img src="https://imgur.com/fwVrOzh.png" width="80" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/><br>
+                            Hard at Work
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img src="https://imgur.com/JnFiDlm.png" width="80" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/><br>
+                            Making Progress
+								</td>
+                        </tr>
+                      </table>
+                      <br>
+                      <br>
+                      <table width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;padding: 20px; table-layout:fixed;">
+                        <tr align="center" valign="top" style="font-family: Proxima Nova, sans-serif; font-size: 15px; font-weight:600; line-height: 26px; color:#545454;">
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img src="https://imgur.com/gDVFMjC.png" width="80" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/><br>
+                            Challenge Accepted
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img src="https://imgur.com/Mqzuq9V.png" width="80" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/><br>
+                            Geek of the Week: Mastery
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <br>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 80px; border-bottom: solid 1px ;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px 50px 20px 50px;  font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                <p style="font-size: 30px; font-weight: 300; line-height: 20px;">
+                  <img src="https://i.imgur.com/rmkRNkw.png" width="50" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						  <span style="font-size: 64px; line-height:50px; padding-left: 10px;"> 3 </span> SKILLS MASTERED
+							   </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 50px;" bgcolor="#ffffff">
+                <table width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;padding: 20px;">
+                  <tr>
+                    <td colspan="5" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                      <table align="center" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;font-weight:500; color:#545454;">
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/ODRVndi.png" height="21" width="21" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td width="300" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Area of parallelograms
+								</td>
+                          <td width="75" align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            1 Problem
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/ODRVndi.png" height="21" width="21" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Volume with fractions
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            2 Problems
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/ODRVndi.png" height="21" width="21" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Areas of triangles
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            2 Problems
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/NCfDEJW.png" height="14" width="19" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Area of parallelograms
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            1 Problem
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/NCfDEJW.png" height="14" width="19" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Evaluate logarithms
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            3 Problems
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/NCfDEJW.png" height="14" width="19" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Two-step equations
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            4 Problems
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/3rnCkzk.png" height="13" width="13" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Cross sections of 3D objects (basic)
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            2 Problems
+								</td>
+                        </tr>
+                        <tr style="border-bottom: 2px solid #B5B5B5;">
+                          <td width="20" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px 10px;">
+                            <img src="https://imgur.com/3rnCkzk.png" height="13" width="13" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                            Determine congruent triangles
+								</td>
+                          <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                            2 Problems
+								</td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 40px;">
+                      <div>
+                        <!--[if mso]>
+                          <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href='https://www.khanacademy.org/profile/kaid_792646335416646399182613/vital-statistics?utm_campaign=weekly-progress&utm_medium=triggered-email&utm_source=email" style="height:30px;v-text-anchor:middle;width:150px;" arcsize="67%" strokecolor="#B5B5B5" fillcolor="">
+                            <w:anchorlock/>
+                              <center style="color:#B5B5B5;font-family:Proxima Nova, sans-serif;font-size:13px;font-weight:bold;">View Full Report</center>
+                            </v:roundrect>
+                        <![endif]-->
+                        <a href="https://www.khanacademy.org/profile/kaid_792646335416646399182613/vital-statistics?utm_campaign=weekly-progress&utm_medium=triggered-email&utm_source=email" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:;border:1.5px solid #B5B5B5;border-radius:20px;color:#B5B5B5;display:inline-block;font-family:Proxima Nova, sans-serif;font-size:13px;font-weight:bold;line-height:30px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;">View Full Report</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 80px; border-bottom: solid 1px ;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td bgcolor="#ffffff" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px 50px 20px 50px;  font-family: Proxima Nova, sans-serif; font-size: 18px; font-weight: 400; line-height: 25px;">
+                <p style="font-size: 30px; font-weight: 300; line-height: 20px;">
+                  <img src="https://i.imgur.com/ynZeSz0.png" width="50" valign="bottom" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						  <span style="font-size: 64px; line-height:50px; padding-left: 10px;"> 10 </span> VIDEOS WATCHED
+							   </p>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; ;" bgcolor="#ffffff">
+                <table width="100%" bgcolor="#ffffff" cellspacing="0" cellpadding="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                  <tr>
+                    <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-right:50px;">
+                      <table cellspacing="0" cellpadding="0" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                        <tr>
+                          <td rowspan="3" cellspacing="0" cellpadding="0" align="center" valign="bottom" width="103" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <img valign="bottom" src="https://i.imgur.com/GjIFh1O.png" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                          <td colspan="4" align="middle" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                            <table align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;font-weight:500; color:#545454;">
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td width="200" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Intro to arcsine
+								</td>
+                                <td width="35" align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  10 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Intro to tangent
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  5 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Intro to arccosine
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  2 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Restricting domains of functions to make them invertible
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  3 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Domain & range of inverse tangent function
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  5 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Using inverse trig functions with a calculator
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  9 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Specifying planes in three dimensions
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  5 mins
+								</td>
+                              </tr>
+                              <tr style="border-bottom: 2px solid #B5B5B5;">
+                                <td width="10" height="26" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 8px;">
+                                  <img src="https://i.imgur.com/r3jlfSP.png" height="15" width="15" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								</td>
+                                <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; padding: 0 10px;">
+                                  Geometric definitions example
+								</td>
+                                <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-family: Proxima Nova, sans-serif; font-size: 13px; font-weight:300; padding: 8px;">
+                                  10 mins
+								</td>
+                              </tr>
+                              <tr>
+                                <td colspan="3" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                                  <div style="padding: 40px 50px 0 0;">
+                                    <!--[if mso]>
+                                      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href='https://www.khanacademy.org/profile/kaid_792646335416646399182613/vital-statistics?utm_campaign=weekly-progress&utm_medium=triggered-email&utm_source=email" style="height:30px;v-text-anchor:middle;width:150px;" arcsize="67%" strokecolor="#B5B5B5" fillcolor="">
+                                        <w:anchorlock/>
+                                          <center style="color:#B5B5B5;font-family: Proxima Nova, sans-serif;font-size:13px;font-weight:bold;">View Full Report</center>
+                                        </v:roundrect>
+                                    <![endif]-->
+                                    <a href="https://www.khanacademy.org/profile/kaid_792646335416646399182613/vital-statistics?utm_campaign=weekly-progress&utm_medium=triggered-email&utm_source=email" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:;border:1.5px solid #B5B5B5;border-radius:20px;color:#B5B5B5;display:inline-block;font-family:Proxima Nova, sans-serif;font-size:13px;font-weight:bold;line-height:30px;text-align:center;text-decoration:none;width:150px;-webkit-text-size-adjust:none;mso-hide:all;">View Full Report</a>
+                                  </div>
+                                  	</td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="5" cellpadding="0" cellspacing="0" align="middle" background="https://i.imgur.com/eFleQxh.png" valign="top" height="84" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background-image: url('https://i.imgur.com/eFleQxh.png'); background-position:left;">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!-- COPY -->
+            <tr>
+              <td cellpadding="0" cellspacing="0" bgcolor="#9BC53D" align="center" height="150" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-radius: 0 0 5px 5px;">
+                <div style="padding-bottom:50px">
+                  <!--[if mso]>
+                    <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="http://khanacademy.org/" style="height:57px;v-text-anchor:middle;width:200px" arcsize="15%" strokecolor="#ffffff">
+                      <w:anchorlock/>
+                        <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Keep Learning!</center>
+                      </v:roundrect>
+                  <![endif]-->
+                  <a href="http://khanacademy.org/" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;mso-hide:all;">Keep Learning!</a>
+                </div>
+              </td>
+            </tr>
+            <!-- COPY -->
+          </table>
+          <!--[if (gte mso 9)|(IE)]>
+          </td>
+        </tr>
+      </table>
+          <![endif]-->
+        </td>
+      </tr>
+      <!-- SUPPORT CALLOUT -->
+      <tr>
+        <td bgcolor="#FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px 10px 0px 10px;">
+          <!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+              <tr>
+                <td align="center" valign="top" width="600">
+          <![endif]-->
+          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px;">
+            <!-- SANDBOX  ELEMENT -->
+            <tr>
+              <!-- FALLBACK -->
+              <td class="fallback" bgcolor="#ffffff" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 20px 50px 50px 50px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: Proxima Nova, sans-serif; font-size: 48px; font-weight: 400;  line-height: 36px;">
+                <p style="font-size: 30px; line-height: 40px; font-weight: 300;">
+                  Why do we study geometry?
+					   </p>
+                <p style=" font-size: 12px; font-weight: 600; line-height: 12px; letter-spacing: .5px; text-transform: uppercase">
+                  Find out Below:
+					   </p>
+              </td>
+              <!-- end of FALLBACK -->
+              <!-- INTERACTIVE/KINETIC TEXT-->
+              <!--[if !mso]><!-- -->
+                <td class="interactive" bgcolor="#ffffff" align="left" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt; display:none;max-height:0;overflow:hidden; padding: 20px 50px 50px 50px; border-radius: 4px 4px 0px 0px; color: #111111; font-family: Proxima Nova, sans-serif; font-size: 48px; font-weight: 400;  line-height: 36px;">
+                  <p style="font-size: 30px; line-height: 40px; font-weight: 300;">
+                    Refresh Your Knowledge
+					   </p>
+                  <p style=" font-size: 12px; font-weight: 600; line-height: 12px; letter-spacing: .5px; text-transform: uppercase">
+                    Practice your skills to reveal a hidden image
+					   </p>
+                </td>
+                <!--<![endif]-->
+                <!-- End of Interactive/Kinetic Text -->
+              </tr>
+              <tr>
+                <td colspan="5" align="left" valign="top" width="100%" background="https://imgur.com/IArNLE6.png" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background-image: url('https://imgur.com/IArNLE6.png'), linear-gradient(#00203B, black); background-repeat: repeat; background-attachment: fixed; border-radius: 0 0 4px 4px; padding: 50px; font-family: Proxima Nova, sans-serif; color: #ffffff;" class="mobile-padding">
+                  <!-- FALLBACK -->
+                  <table class="fallback" width="100%" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                    <tr>
+                      <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:20px;">
+                        <img width="100%" src="https://i.imgur.com/dCh8rxc.gif" alt="https://i.imgur.com/xSIKBQb.png" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						  </td>
+                    </tr>
+                    <tr>
+                      <td bgcolor="white" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-radius: 4px; padding: 20px 30px; font-family: Proxima Nova, sans-serif; color:#111111;">
+                        <p style="font-size: 15px; line-height: 26px; font-family: Proxima Nova, sans-serif; font-weight: 500;">
+                          The importance of patterns, shapes, sizes and positions in geometry makes this type of math very useful for those in the architecture field. Architects use shapes and angles when they draw plans for residential, commercial and public spaces. They also use geometric principles to create symmetrical features in homes, public spaces and commercial properties.
+					   </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding-top: 20px;">
+                        <div style="padding: 50px">
+                          <!--[if mso]>
+                            <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/math/geometry/hs-geo-foundations?ref=resume_learning#hs-geo-angles" style="height:57px;v-text-anchor:middle;width:300px;" arcsize="15%" strokecolor="#ffffff">
+                              <w:anchorlock/>
+                                <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Continue Learning Geometry &rarr;</center>
+                              </v:roundrect>
+                          <![endif]-->
+                          <a href="https://www.khanacademy.org/math/geometry/hs-geo-foundations?ref=resume_learning#hs-geo-angles" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:350px;-webkit-text-size-adjust:none;mso-hide:all;">Continue Learning Geometry &rarr;</a>
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- end of FALLBACK -->
+                  <!-- INTERACTIVE/KINETIC -->
+                  <!--[if !mso]><!-- -->
+                    <table class="interactive" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;display:none;max-height:0;overflow:hidden;">
+                      <tr>
+                        <td colspan="5" width="500" height="600" align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 25px 0; font-family: Proxima Nova, sans-serif; color: #ffffff;">
+                          <!-- RADIO BUTTONS -->
+                          <input type="checkbox" checked style="display:none;">
+                          <input type="radio" name="slide" id="one" checked style="display:none;">
+                          <input type="radio" name="slide" id="two" style="display:none;">
+                          <input type="radio" name="slide" id="three" style="display:none;">
+                          <input type="radio" name="slide" id="between1" style="display:none;">
+                          <input type="radio" name="slide" id="between2" style="display:none;">
+                          <input type="radio" name="slide" id="between3" style="display:none;">
+                          <input type="radio" name="slide" id="between4" style="display:none;">
+                          <!-- SLIDES -->
+                          <div class="wrapper">
+                            <div class="connect1" align="middle" style="display:none;">
+                              <label style="cursor:pointer;">
+                                <img src="https://i.imgur.com/XFfTJAx.png" width="100%" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								<label for="two" class="betweennext" style="cursor:pointer;background:#68c587;border-radius:3px;font-size:18px;padding:12px 15px;color:#ffffff;font-weight:bold;float:right;float:bottom;margin-top:10px;display:inline-block !important;">Next Question &rarr;</label>
+                              </label>
+                            </div>
+                            <div class="connect2" align="middle" style="display:none;">
+                              <label style="cursor:pointer;">
+                                <img src="https://i.imgur.com/hnhfCzt.png" width="100%" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+									<label for="three" class="betweennext" style="cursor:pointer;background:#68c587;border-radius:3px;font-size:18px;padding:12px 15px;color:#ffffff;font-weight:bold;float:right;float:bottom;margin-top:10px;display:inline-block !important;">Next Question &rarr;</label>
+                              </label>
+                            </div>
+                            <div class="connect3" align="middle" style="display:none;">
+                              <label style="cursor:pointer;">
+                                <img src="https://i.imgur.com/kvtbDv4.png" width="100%" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/><br>
+                                <label for="between4" class="betweennext" style="cursor:pointer;background:#68c587;border-radius:3px;font-size:18px;padding:12px 15px;color:#ffffff;font-weight:bold;float:right;float:bottom;margin-top:10px;display:inline-block !important;">Reveal!</label>
+                              </label>
+                            </div>
+                            <div class="connect4" align="middle" style="display:none; font-family: Proxima Nova, sans-serif; color:white;">
+                              <img src="https://i.imgur.com/jSzS5ti.png?3" width="100%" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								<br>
+                              <br>
+                              <div class="description" style="font-family:Proxima Nova, sans-serif;padding-top:26px;padding-bottom:26px;padding-right:50px;padding-left:50px;text-align:left;">
+                                <h2 align="middle">It's Arlo!</h2>
+                                 
+                                <p style="font-size:18px; line-height: 26px;"> Learn the geometry behind how Pixar artists created Arlo’s dinosaur skin with the Patterns course in our Pixar in a Box series! </p>
+                              </div>
+                              <div>
+                                <!--[if mso]>
+                                  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/partner-content/pixar/pattern/dino/v/creating-patterns-pixar-in-a-box" style="height:57px;v-text-anchor:middle;width:300px;" arcsize="15%" strokecolor="#ffffff" fillcolor="">
+                                    <w:anchorlock/>
+                                      <center style="color:#ffffff;font-family:Proxima Nova, sans-serif;font-size:18px;font-weight:normal;">Build Some Dinosaur Skin!</center>
+                                    </v:roundrect>
+                                <![endif]-->
+                                <a href="https://www.khanacademy.org/partner-content/pixar/pattern/dino/v/creating-patterns-pixar-in-a-box" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:;border:1px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:normal;line-height:57px; text-align:center;text-decoration:none;width:300px;-webkit-text-size-adjust:none;mso-hide:all;">Build Some Dinosaur Skin!</a>
+                              </div>
+                            </div>
+                            <div class="slide1" style="display:none;padding-top:20px;padding-bottom:50px;padding-right:50px;padding-left:50px;text-align:left;background:#ffffff;border-radius:5px;color:black;">
+                              <p style="font-size:12px; line-height: 12px;"> QUESTION 1 OF 3 </p>
+                              <h1 style="font-size:20px;line-height:26px;">Are the points M, B, and A collinear?</h1>
+                              <img src="https://i.imgur.com/QRK6md9.png" width="300" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								<label style="cursor:pointer;">
+                                <input type="radio" name="quiz" value="one" id="correct" style="display:none;">
+                                <div style="opacity:0.6;padding:15px;">
+                                  <div class="a" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">A</div>
+                                   &nbsp; 
+                                  <p class="answer" style="display:inline;line-height:30px;font-size:15px;">Yes</p>
+                                </div>
+                                <label style="cursor:pointer;">
+                                  <input type="radio" name="quiz" value="two" id="wrong" style="display:none;">
+                                  <div style="opacity:0.6;padding:15px;">
+                                    <div class="b" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">B</div>
+                                     &nbsp; 
+                                    <p class="answer" style="display:inline;line-height:30px;font-size:15px;">No</p>
+                                  </div>
+                                  <div class="error" style="display:none;">
+                                    Try again!
+										</div>
+                                </label>
+                                <div class="success" style="display:none;">
+                                  Correct!
+												</div>
+                                <label for="between1" class="next" style="cursor:pointer;display:none;">Next Question &rarr;</label>
+                              </label>
+                            </div>
+                            <div class="slide2" style="display:none;padding-top:20px;padding-bottom:50px;padding-right:50px;padding-left:50px;text-align:left;background:#ffffff;border-radius:5px;color:black;">
+                              <p style="font-size:12px; line-height: 12px;"> QUESTION 2 OF 3 </p>
+                              <h1 style="font-size:20px;line-height:26px;">What is the dashed <span style="color:green;">green</span> part of the figure below?</h1>
+                              <img align="center" src="https://i.imgur.com/gZhf5wZ.png" width="200" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+								<label style="cursor:pointer;">
+                                <input type="radio" name="quiz" value="one" id="wrong" style="display:none;">
+                                <div style="opacity:0.6;padding:15px;">
+                                  <div class="a" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;"> A </div>
+                                   &nbsp; 
+                                  <p class="answer" style="display:inline;line-height:30px;font-size:15px;">A line segment</p>
+                                </div>
+                                <label style="cursor:pointer;">
+                                  <input type="radio" name="quiz" value="two" id="correct" style="display:none;">
+                                  <div style="opacity:0.6;padding:15px;">
+                                    <div class="b" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">B</div>
+                                     &nbsp; 
+                                    <p class="answer" style="display:inline;line-height:30px;font-size:15px;">A line</p>
+                                  </div>
+                                  <label style="cursor:pointer;">
+                                    <input type="radio" name="quiz" value="three" id="wrong" style="display:none;">
+                                    <div style="opacity:0.6;padding:15px;">
+                                      <div class="c" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">C</div>
+                                       &nbsp; 
+                                      <p class="answer" style="display:inline;line-height:30px;font-size:15px;">A ray</p>
+                                    </div>
+                                    <div class="error" style="display:none;">
+                                      Try again!
+										</div>
+                                  </label>
+                                  <div class="success" style="display:none;">
+                                    Correct!
+												</div>
+                                  <label for="between2" class="next" style="cursor:pointer;display:none;">Next Question &rarr;</label>
+                                </label>
+                                <div class="error" style="display:none;">
+                                  Try again!
+								</div>
+                              </label>
+                            </div>
+                            <div class="slide3" style="display:none;padding-top:20px;padding-bottom:50px;padding-right:50px;padding-left:50px;text-align:left;background:#ffffff;border-radius:5px;color:black;">
+                              <p style="font-size:12px; line-height: 12px;"> QUESTION 3 OF 3 </p>
+                              <h1 style="font-size:20px;line-height:26px;">Could 4.1 cm, 8.4 cm, and 1.3 cm be the side lengths of a triangle?</h1>
+                              <label style="cursor:pointer;">
+                                <input type="radio" name="quiz" value="one" id="wrong" style="display:none;">
+                                <div style="opacity:0.6;padding:15px;">
+                                  <div class="a" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">A</div>
+                                   &nbsp; 
+                                  <p class="answer" style="display:inline;line-height:30px;font-size:15px;">Yes</p>
+                                </div>
+                                <label style="cursor:pointer;">
+                                  <input type="radio" name="quiz" value="two" id="correct" style="display:none;">
+                                  <div style="opacity:0.6;padding:15px;">
+                                    <div class="b" style="display:inline-block;padding:5px 10px;border:2px solid #ccc;border-radius:30px;font-size:15px;">B</div>
+                                     &nbsp; 
+                                    <p class="answer" style="display:inline;line-height:30px;font-size:15px;">No</p>
+                                  </div>
+                                  <div class="success" style="display:none;">
+                                    Correct!
+										</div>
+                                  <label for="between3" class="next" style="cursor:pointer;display:none;">Next Question &rarr;</label>
+                                </label>
+                                <div class="error" style="display:none;">
+                                  Try again!
+								</div>
+                              </label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                    <!--<![endif]-->
+                    <!-- End of Interactive/Kinetic -->
+                  </td>
+                </tr>
+              </table>
+              <!--[if (gte mso 9)|(IE)]>
+              </td>
+            </tr>
+          </table>
+              <![endif]-->
+            </td>
+          </tr>
+          <!-- FOOTER -->
+          <tr>
+            <td bgcolor="#FFCD4D" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 50px 10px 0px 10px;">
+              <!--[if (gte mso 9)|(IE)]>
+                <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">
+                  <tr>
+                    <td align="center" valign="top" width="600">
+              <![endif]-->
+              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;max-width: 600px; padding-top: 30px;">
+                <tr>
+                  <td bgcolor="dark blue" align="left" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-radius: 4px 4px 0 0; font-family:Proxima Nova, sans-serif; font-size: 20px; font-weight:600; padding: 50px 50px 50px 50px;">
+                    Jump Back Into Other Courses You Started:
+						
+                    <table width="100%" table-layout="fixed" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;">
+                      <tr>
+                        <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <div style="padding-top: 40px;"> <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/science/biology/intro-to-biology?ref=resume_learning#science-of-biology" style="height:57px;v-text-anchor:middle;width:225px" arcsize="15%" strokecolor="#ffffff">
+                                <w:anchorlock/>
+                                  <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Intro to Biology</center>
+                                </v:roundrect>
+                            <![endif]-->
+                            <a href="https://www.khanacademy.org/science/biology/intro-to-biology?ref=resume_learning#science-of-biology" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:225px;-webkit-text-size-adjust:none;mso-hide:all;">Intro to Biology</a>
+                          </div>
+                        </td>
+                        <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <div style="padding-top: 40px;"> <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/math/geometry/hs-geo-foundations?ref=resume_learning#hs-geo-angles" style="height:57px;v-text-anchor:middle;width:225px" arcsize="15%" strokecolor="#ffffff">
+                                <w:anchorlock/>
+                                  <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Geometry Foundations</center>
+                                </v:roundrect>
+                            <![endif]-->
+                            <a href="https://www.khanacademy.org/math/geometry/hs-geo-foundations?ref=resume_learning#hs-geo-angles" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:225px;-webkit-text-size-adjust:none;mso-hide:all;">Geometry Foundations</a>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <div style="padding-top: 20px;"> <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/science/biology/macromolecules" style="height:57px;v-text-anchor:middle;width:225px" arcsize="15%" strokecolor="#ffffff">
+                                <w:anchorlock/>
+                                  <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Macromolecules</center>
+                                </v:roundrect>
+                            <![endif]-->
+                            <a href="https://www.khanacademy.org/science/biology/macromolecules" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:225px;-webkit-text-size-adjust:none;mso-hide:all;">Macromolecules</a>
+                          </div>
+                        </td>
+                        <td align="right" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;">
+                          <div style="padding-top: 20px;">
+                            <!--[if mso]>
+                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.khanacademy.org/math/precalculus/trig-equations-and-identities-precalc?ref=resume_learning#inverse-trig-functions-precalc" style="height:57px;v-text-anchor:middle;width:225px" arcsize="15%" strokecolor="#ffffff">
+                                <w:anchorlock/>
+                                  <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Trigonometry</center>
+                                </v:roundrect>
+                            <![endif]-->
+                            <a href="https://www.khanacademy.org/math/geometry/hs-geo-foundations?ref=resume_learning#hs-geo-angles" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;border:1.5px solid #ffffff;border-radius:8px;color:#ffffff;display:inline-block;font-family: Proxima Nova, sans-serif;font-size:18px;font-weight:bold;line-height:57px;text-align:center;text-decoration:none;width:225px;-webkit-text-size-adjust:none;mso-hide:all;">Trigonometry</a>
+                          </div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td bgcolor="white" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-radius: 0 0 4px 4px; font-family:Proxima Nova, sans-serif; font-size: 30px; padding: 50px;">
+                    Great work this week May-Li! <span style="font-size: 12px; text-transform: uppercase; font-weight: 600;">  <br>
+                       Keep up the effort & don't forget: </span> <span style="font-size: 12px; text-transform: uppercase; text-transform:italic; font-weight: 600;"> you can learn anything </span> <span style="font-size: 12px;">  🙂 </span>
+                  </td>
+                </tr>
+                <!-- NAVIGATION -->
+                <tr>
+                  <td colspan="5" width="100%" align="center" valign="top" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding: 80px 0 50px 0; font-family: Proxima Nova, sans-serif; color: #ffffff;">
+                    <img src="https://imgur.com/Ks99hOK.jpg" height="20" width="194" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+                       
+                    <p style="font-size: 14px; line-height: 20px;">
+                      P.O. Box 1630,<br>
+                      Mountain View, CA
+						 <br>
+                      <br>
+                      <img src="https://i.imgur.com/wo9waq1.png" height="24" width="24" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						   &nbsp;  &nbsp;
+						   <img src="https://i.imgur.com/BhEFT3Z.png" height="24" width="24" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+						   &nbsp;  &nbsp;
+						   <img src="https://i.imgur.com/p05ZI3Z.png" height="24" width="24" style="-ms-interpolation-mode:bicubic;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;"/>
+                       </p>
+                  </td>
+                </tr>
+              </table>
+              <!--[if (gte mso 9)|(IE)]>
+              </td>
+            </tr>
+          </table>
+              <![endif]-->
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
